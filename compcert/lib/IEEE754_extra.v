@@ -116,7 +116,7 @@ Defined.
 Definition integer_representable (n: Z): Prop :=
   Z.abs n <= 2^emax - 2^(emax - prec) /\ generic_format radix2 fexp (IZR n).
 
-Let int_upper_bound_eq: 2^emax - 2^(emax - prec) = (2^prec - 1) * 2^(emax - prec).
+Local Lemma int_upper_bound_eq: 2^emax - 2^(emax - prec) = (2^prec - 1) * 2^(emax - prec).
 Proof.
   red in prec_gt_0_.
   ring_simplify. rewrite <- (Zpower_plus radix2) by omega. f_equal. f_equal. omega.
